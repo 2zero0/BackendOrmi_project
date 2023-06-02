@@ -2,63 +2,40 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>chat</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로젝트1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div>
-      <form>
-        <input type="text" />
-        <button type="submit">전송</button>
-      </form>
-      <div id="contents"></div>
+    <div class="container">
+      <div class="guide2">
+        <p>냉장고에 있는 재료를 입력하시고 냄비를 클릭하세요!</p>
+      </div>
+      <div>
+        <div>
+          <img style="width: 480px; height: 130px" src="img/키친top.png" />
+        </div>
+
+        <div class="formbox">
+          <form id="myForm" action="index.html">
+            <textarea
+              id="myTextarea"
+              placeholder=" 여기에 입력하세요! (ex, 감자, 양파)"
+            ></textarea>
+
+            <button>
+              <img class="buttonImg" src="img/b2.png" alt="" />
+            </button>
+          </form>
+        </div>
+
+        <div>
+          <img style="width: 480px; height: 280px" src="img/키친bottom.png" />
+        </div>
+      </div>
     </div>
-    <script>
-      let $input = document.querySelector("input");
-      let $button = document.querySelector("button");
-
-      let data = [
-        {
-          role: "system",
-          content: "assistant는 제주 여행 전문가이다.",
-        },
-      ];
-
-      let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
-
-      $button.addEventListener("click", (e) => {
-        e.preventDefault();
-        userInputData = $input.value;
-        $input.value = "";
-
-        data.push({
-          role: "user",
-          content: userInputData,
-        });
-        // 답변 목록도 push를 하면 맥락을 이해하여 답변이 가능합니다.
-        // DAY 1, DAY 2, DAY 3와 같은 형식으로 답변해줘라고 미리 학습을 시켜놓으면 split('DAY') 이런 식으로 Card를 만들 수 있습니다.
-
-        chatGptAPI();
-      });
-
-      function chatGptAPI() {
-        fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-          redirect: "follow",
-        })
-          .then((res) => res.json())
-          .then((res) => {
-            // console.log(res)
-            // console.log(res.choices[0].message.content)
-            document.querySelector("#contents").innerText =
-              res.choices[0].message.content;
-          });
-        // 아래 코드는 fetch 성공, 실패, 통신 중 여부와 상관없이 실행됩니다. 비동기에요.
-        console.log("hello world");
-      }
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "NeoDunggeunmo";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/neodgm/NeoDunggeunmo.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/neodgm/NeoDunggeunmo.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/neodgm/NeoDunggeunmo.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/neodgm/NeoDunggeunmo.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/neodgm/NeoDunggeunmo.ttf")
+      format("truetype");
+  font-display: swap;
+}
+/*초기화 작업*/
+body,
+h1,
+p,
+textarea {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #7fffd454;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  justify-content: center;
+  min-width: 100vh;
+}
+
+.main {
+  position: relative;
+  margin: auto;
+}
+
+.guide {
+  background-color: #4482c3;
+  color: white;
+  width: 500px;
+  text-align: center;
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: "NeoDunggeunmo";
+  font-size: large;
+}
+
+.refrigeratorIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chefIcon {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*index.html*/
+textarea {
+  width: 460px;
+  height: 6.25em;
+  resize: none !important;
+  border: 6px solid #3c3e4f;
+  border-radius: 10px;
+  padding: 20px !important;
+  font-family: "NeoDunggeunmo" !important;
+  font-size: medium !important;
+}
+
+.guide2 {
+  background-color: #ffaf9f;
+  color: white;
+  width: 500px;
+  height: 60px;
+  text-align: center;
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: "NeoDunggeunmo";
+  font-size: large;
+}
+
+.formbox {
+  background-color: white;
+}
+
+button {
+  display: flex;
+  margin: 0 auto !important;
+}
+
+.buttonImg {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+
+.buttonImg:hover {
+  animation: vibration 0.1s infinite;
+}
+
+@keyframes vibration {
+  from {
+    transform: rotate(1deg);
+  }
+  to {
+    transform: rotate(-1deg);
+  }
+}
+
+/*result.html*/
+.container2 {
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  min-width: 100vh;
+}
+
+.chefIcon2 {
+  width: 200px;
+  height: 200px;
+}
+
+.cookingList {
+  width: 550px;
+  height: 600px;
+  background-color: #ecf0f1;
+  font-family: "NeoDunggeunmo";
+  font-size: medium;
+  padding: 20px;
+  border: 5px solid #3c3e4f;
+  border-radius: 0 20px 20px 20px;
+}
+
+.chefAnswer {
+  margin-left: 20px;
+}
+
+.guide3 {
+  width: 550px;
+  height: 70px;
+  background-color: #4482c3;
+  color: white;
+  margin-top: 20px;
+  font-family: "NeoDunggeunmo";
+  font-size: medium;
+  padding: 20px;
+  border: 5px solid #3c3e4f;
+  border-radius: 0 20px 20px 20px;
+  text-align: center;
+}
+
+.highlight {
+  display: inline;
+  box-shadow: inset 0 -10px 0 #ffe2b5;
+  /*-10px은 highlight의 두께*/
+}
+
+.buttonImg2 {
+  width: 100px;
+  height: 100px;
+}
+
+.buttonImg3 {
+  width: 100px;
+  height: 100px;
+}
+
+.buttonBox {
+  margin-top: 40px;
+  display: flex;
+  margin-left: 80px;
+}

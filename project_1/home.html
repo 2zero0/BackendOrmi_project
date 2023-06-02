@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로젝트1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="guide">
+        <p>
+          당신의 냉장고를 저에게 맡기시겠습니까?<br />
+          동의하시면 저를 클릭 해주세요!
+        </p>
+      </div>
+      <div class="main">
+        <div class="refrigeratorIcon">
+          <img style="height: 600px" src="img/free-icon-fridge-896260.png" />
+          <div class="chefIcon">
+            <img src="img/free-icon-chef-7414124.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="js/script.js"></script> -->
+    <script>
+      document.querySelector(".chefIcon").addEventListener("click", (e) => {
+        window.location = "index.html";
+      });
+    </script>
+  </body>
+</html>

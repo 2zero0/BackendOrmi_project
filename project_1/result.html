@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>결과-요리목록</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div style="display: flex">
+        <div class="cookingIcon">
+          <img class="chefIcon2" src="img/free-icon-chef-7414124.png" />
+          <!--다양한 아이콘 넣기-->
+        </div>
+        <div class="chefAnswer">
+          <div class="cookingList">
+            <div id="resultAnswer"></div>
+          </div>
+          <div class="guide3">
+            <p>돌아가시려면 당근을, 레시피를 보시려면 레시피북을 눌러주세요!</p>
+          </div>
+          <div class="buttonBox">
+            <!--버튼1(돌아가기)-->
+            <div class="buttonImg2">
+              <img src="img/free-icon-carrot-1514935.png" alt="" />
+            </div>
+            <!--버튼2(레시피보기)-->
+            <button>
+              <img class="buttonImg3" src="img/rc3.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="js/script.js"></script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 로컬 스토리지에서 값을 가져와서 출력
+        // 입력값
+        const inputValue = localStorage.getItem("inputValue");
+        console.log(inputValue);
+
+        // 출력값
+        const resultValue = localStorage.getItem("resultValue");
+        console.log(resultValue);
+
+        // document.querySelector("#contents3").innerText = resultValue;
+
+        ////개지랄시작
+        const lines = resultValue.split("\n");
+        let formattedString = "";
+
+        lines.forEach((line) => {
+          // console.log(line);
+          const trimmedLine = line.trim();
+          // console.log(trimmedLine);
+          if (trimmedLine !== "") {
+            // console.log(trimmedLine);
+            const dotIndex = trimmedLine.indexOf(":");
+            // console.log(dotIndex);
+            if (dotIndex !== -1) {
+              const number = trimmedLine.substring(0, dotIndex).trim();
+              // console.log(number);
+              const dish = trimmedLine.substring(dotIndex + 1).trim();
+              // console.log(dish);
+              const formattedLine = `<b class="highlight">${number}:</b> ${dish}`;
+              formattedString += `${formattedLine}<br>`;
+            } else {
+              formattedString += `<br>${trimmedLine}<br><br>`;
+            }
+          }
+        });
+
+        const pElement = document.createElement("p");
+        pElement.innerHTML = formattedString;
+        // document.body.appendChild(pElement);
+        document.getElementById("resultAnswer").appendChild(pElement);
+      });
+
+      // 당근 클릭시 페이지 이동
+      document.querySelector(".buttonImg2").addEventListener("click", (e) => {
+        window.location = "index.html";
+      });
+    </script>
+  </body>
+</html>
