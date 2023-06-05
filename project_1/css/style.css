@@ -84,6 +84,7 @@ textarea {
   padding: 20px !important;
   font-family: "NeoDunggeunmo" !important;
   font-size: medium !important;
+  margin-left: 10px;
 }
 
 .guide2 {
@@ -185,9 +186,19 @@ button {
   height: 100px;
 }
 
+.buttonImg2:hover {
+  width: 105px;
+  height: 105px;
+}
+
 .buttonImg3 {
   width: 100px;
   height: 100px;
+}
+
+.buttonImg3:hover {
+  width: 105px;
+  height: 105px;
 }
 
 .buttonBox {
