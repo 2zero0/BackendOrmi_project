@@ -84,7 +84,6 @@ textarea {
   padding: 20px !important;
   font-family: "NeoDunggeunmo" !important;
   font-size: medium !important;
-  margin-left: 10px;
 }
 
 .guide2 {
@@ -107,6 +106,9 @@ textarea {
 
 .formbox {
   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button {

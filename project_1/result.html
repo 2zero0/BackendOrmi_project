@@ -363,8 +363,6 @@
         // 출력확인용
         console.log("입력값: ", inputRecipeName);
 
-        // 이제 chatGPT 훈련시키고(data에 값 넣기) url설정해서 사용자 입력 값 push하고 챗gpt함수 호출 (그 안에서 열심히 계산) 후 출력
-
         // 초기화 + 입력 값 출력
         document.querySelector(
           ".recipeBox"
@@ -398,27 +396,21 @@
             let formattedStr = "";
 
             line_group.forEach((line, index) => {
-              // console.log(line);
               const trim_line = line.trim();
-              // console.log(trimmedLine);
               if (trim_line !== "") {
-                // console.log(trimmedLine);
                 const dotIdx = trim_line.indexOf(":");
-                // console.log(dotIndex);
                 if (dotIdx !== -1) {
                   const title = trim_line.substring(0, dotIdx).trim();
-                  // console.log(number);
                   const description = trim_line.substring(dotIdx + 1).trim();
-                  // console.log(dish);
-                  const format_line = `<b class="highlight2">${title}:</b> ${description}`;
+                  const format_line = `<br><b class="highlight2">${title}:</b> ${description}`;
                   formattedStr += `${format_line}<br>`;
                 } else {
                   formattedStr += `${trim_line}<br>`;
                 }
               }
 
-              // 첫 줄 다음에 <br>을 두 번 삽입
-              if (index === 0) {
+              // 마지막 줄에 <br> 삽입
+              if (index === line_group.length - 1) {
                 formattedStr += "<br>";
               }
             });
