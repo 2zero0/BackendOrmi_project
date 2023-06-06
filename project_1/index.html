@@ -6,36 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>프로젝트1</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="guide2">
-        <p>냉장고에 있는 재료를 입력하시고 냄비를 클릭하세요!</p>
+      <div class="guide">
+        <p>
+          당신의 냉장고를 저에게 맡기시겠습니까?<br />
+          동의하시면 저를 클릭 해주세요!
+        </p>
       </div>
-      <div>
-        <div>
-          <img style="width: 480px; height: 130px" src="img/키친top.png" />
-        </div>
-
-        <div class="formbox">
-          <form id="myForm">
-            <textarea
-              id="myTextarea"
-              placeholder=" 여기에 입력하세요! (ex, 감자, 양파)"
-            ></textarea>
-
-            <button>
-              <img class="buttonImg" src="img/b2.png" alt="" />
-            </button>
-          </form>
-        </div>
-
-        <div>
-          <img style="width: 480px; height: 280px" src="img/키친bottom.png" />
+      <div class="main">
+        <div class="refrigeratorIcon">
+          <img style="height: 600px" src="img/free-icon-fridge-896260.png" />
+          <div class="chefIcon">
+            <img src="img/free-icon-chef-7414124.png" />
+          </div>
         </div>
       </div>
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

@@ -23,22 +23,21 @@ let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // 기본 제출 동작 방지
 
-  /* 로딩중 */
-  //
-  LoadingWithMask(); // 로딩 중 표시 함수 호출
+  /*로딩중 화면*/
+  LoadingWithMask(); // 로딩중 표시 함수 호출
 
   setTimeout(function () {
-    closeLoadingWithMask(); // 1분 후에 로딩 중 표시 닫기 함수 호출
+    closeLoadingWithMask(); // 1분 후에 로딩중 제거 함수 호출
   }, 60000);
-  //
 
-  console.log(textarea.value); // textarea의 값 콘솔에 출력
+  // 출력 확인용
+  // console.log(textarea.value);
 
-  // 입력한 값을 로컬 스토리지에 저장
-  localStorage.setItem("inputValue", textarea.value);
-
-  // chatGPT
+  // 입력값을 로컬 스토리지에 저장
   userInputData = textarea.value;
+  localStorage.setItem("inputValue", userInputData);
+
+  // textarea란 초기화
   textarea.value = "";
 
   data.push({
@@ -60,21 +59,19 @@ function chatGptAPI() {
   })
     .then((res) => res.json())
     .then((res) => {
-      //console.log("res: ", res); // 출력test
-      //console.log("출력값: ", res.choices[0].message.content); // 출력test
+      // 출력 확인용
+      //console.log("res: ", res);
+      //console.log("출력값: ", res.choices[0].message.content);
 
-      // document.querySelector("#contents").innerText =
-      //   res.choices[0].message.content;
-
+      // 출력값을 로컬 스토리지에 저장
       localStorage.setItem("resultValue", res.choices[0].message.content);
 
       // 페이지 이동
       window.location = "result.html";
     });
-
-  console.log("hello young");
 }
 
+// 로딩중 표시 함수
 function LoadingWithMask() {
   const containerDisable = document.getElementsByClassName("container");
   for (let i = 0; i < containerDisable.length; i++) {
@@ -130,6 +127,7 @@ function LoadingWithMask() {
   loadingImg.style.display = "block";
 }
 
+// 로딩중 제거 함수
 function closeLoadingWithMask() {
   var mask = document.getElementById("mask");
   var loadingImg = document.getElementById("loadingImg");

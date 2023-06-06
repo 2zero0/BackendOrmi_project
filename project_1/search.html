@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로젝트1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="guide2">
+        <p>냉장고에 있는 재료를 입력하시고 냄비를 클릭하세요!</p>
+      </div>
+      <div>
+        <div>
+          <img style="width: 480px; height: 130px" src="img/키친top.png" />
+        </div>
+
+        <div class="formbox">
+          <form id="myForm">
+            <textarea
+              id="myTextarea"
+              placeholder=" 여기에 입력하세요! (ex, 감자, 양파)"
+            ></textarea>
+
+            <button>
+              <img class="buttonImg" src="img/b2.png" alt="" />
+            </button>
+          </form>
+        </div>
+
+        <div>
+          <img style="width: 480px; height: 280px" src="img/키친bottom.png" />
+        </div>
+      </div>
+    </div>
+    <script src="js/search.js"></script>
+  </body>
+</html>
