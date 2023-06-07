@@ -20,6 +20,11 @@ const textarea = document.getElementById("myTextarea");
 
 let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
+// 이벤트 핸들러 - submit 이벤트 발생 시
+// 1. 로딩중 화면 출력 함수, 로딩중 화면 제거 함수 호출
+// 2. 사용자 입력 값(냉장고 재료) 로컬스토리지 저장
+// 3. data 배열에 입력값 추가
+// 4. chatGptAPI 함수 호출
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // 기본 제출 동작 방지
 
@@ -48,6 +53,7 @@ form.addEventListener("submit", function (event) {
   chatGptAPI();
 });
 
+// chatGptAPI를 이용하여 입력 값에 대한 출력 값 로컬스토리지 저장 후 페이지 전환 함수
 function chatGptAPI() {
   fetch(url, {
     method: "POST",
@@ -78,7 +84,7 @@ function LoadingWithMask() {
     containerDisable[i].style.display = "none";
   }
 
-  var mask = document.createElement("div");
+  let mask = document.createElement("div");
   mask.id = "mask";
   mask.style.position = "absolute";
   mask.style.zIndex = "9000";
@@ -87,9 +93,9 @@ function LoadingWithMask() {
   mask.style.left = "0";
   mask.style.top = "0";
 
-  var loadingImg = document.createElement("div");
+  let loadingImg = document.createElement("div");
   loadingImg.id = "loadingImg";
-  var img = document.createElement("img");
+  let img = document.createElement("img");
   img.src = "img/cooking.gif";
   img.style.position = "relative";
   img.style.display = "block";
@@ -98,7 +104,7 @@ function LoadingWithMask() {
   img.style.height = "500px";
   loadingImg.appendChild(img);
 
-  var message = document.createElement("p");
+  let message = document.createElement("p");
   message.textContent = "요리 구상중입니다 1분만 기다려주세요!";
   message.style.textAlign = "center";
   message.style.fontFamily = "NeoDunggeunmo";
@@ -116,8 +122,8 @@ function LoadingWithMask() {
   document.body.appendChild(mask);
   document.body.appendChild(loadingImg);
 
-  var maskHeight = document.documentElement.scrollHeight;
-  var maskWidth = document.documentElement.clientWidth;
+  let maskHeight = document.documentElement.scrollHeight;
+  let maskWidth = document.documentElement.clientWidth;
 
   mask.style.width = maskWidth + "px";
   mask.style.height = maskHeight + "px";
@@ -129,8 +135,8 @@ function LoadingWithMask() {
 
 // 로딩중 제거 함수
 function closeLoadingWithMask() {
-  var mask = document.getElementById("mask");
-  var loadingImg = document.getElementById("loadingImg");
+  let mask = document.getElementById("mask");
+  let loadingImg = document.getElementById("loadingImg");
   if (mask && loadingImg) {
     mask.style.display = "none";
     loadingImg.style.display = "none";
