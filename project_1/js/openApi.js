@@ -51,11 +51,6 @@ export function searchImages(query) {
 
 // 모달 - 레시피 출력 (chatGPT API)
 export function searchRecipe(inputRecipeName) {
-  // 안내 문구 (입력 값 포함)
-  document.querySelector(
-    ".recipe-box"
-  ).innerHTML = `<p style='text-align: center'>잠시만 기다리시면 이 곳에 <b style='color: #394049'>'${inputRecipeName}'</b> 레시피가 출력됩니다!</p>`;
-
   data2.push({
     role: "user",
     content: inputRecipeName,
