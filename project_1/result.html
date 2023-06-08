@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fridge Rescuer</title>
-    <script defer src="js/result.js"></script>
+    <script defer src="js/result.js" type="module"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="css/style.css" />
@@ -14,72 +14,68 @@
     <div class="container">
       <!--modal-->
       <div class="modal">
-        <div class="modal_body">
-          <button class="closeButton">
-            <img
-              src="img/free-icon-cancel-8532370.png"
-              style="width: 30px; height: 30px"
-            />
+        <div class="modal-body">
+          <button class="close-button">
+            <img class="cancel-icon" src="img/cancel.png" alt="X표시 아이콘" />
           </button>
 
-          <div class="modal_main">
-            <div class="guide4">
+          <div class="modal-main">
+            <div class="guide04">
               <p>레시피를 검색하세요</p>
             </div>
-            <div class="inputBox">
+            <div class="input-box">
               <input
                 type="text"
-                class="inputStyle"
+                class="input-style"
                 placeholder="ex, 감자전"
-                id="search-input"
+                id="searchInput"
               />
-              <button
-                onclick="searchImages(); searchRecipe();"
-                class="searchButton"
-              >
+              <button class="search-button">
                 <img
+                  class="search-icon"
                   src="img/search.png"
-                  alt=""
-                  style="width: 30px; height: 30px; margin-left: 10px"
+                  alt="돋보기 모양 검색 아이콘"
                 />
               </button>
             </div>
-            <div class="imgBox">
+            <div class="img-box">
               <img
                 id="recipeImg"
-                src="img/hot-pot.png"
-                alt="검색결과출력사진"
-                style="width: 400px; height: 400px"
+                class="hotpot-icon"
+                src="img/hotpot.png"
+                alt="전골 이미지"
               />
             </div>
-            <div class="recipeBox">
-              <p style="text-align: center">
-                이 곳에 레시피가 출력될 예정입니다!
-              </p>
+            <div class="recipe-box">
+              <p>이 곳에 레시피가 출력될 예정입니다!</p>
             </div>
           </div>
         </div>
       </div>
       <!--main-->
-      <div style="display: flex">
-        <div class="cookingIcon">
-          <img class="chefIcon2" src="img/chef.png" />
+      <div class="result-main">
+        <div>
+          <img class="chef-icon02" src="img/chef.png" alt="쉐프 아이콘" />
         </div>
-        <div class="chefAnswer">
-          <div class="cookingList">
+        <div class="answer-box">
+          <div class="cooking-list">
             <div id="resultAnswer"></div>
           </div>
-          <div class="guide3">
+          <div class="guide03">
             <p>돌아가시려면 당근을, 레시피를 보시려면 레시피북을 눌러주세요!</p>
           </div>
-          <div class="buttonBox">
+          <div class="button-box">
             <!--버튼1 (돌아가기)-->
-            <div class="buttonImg2">
-              <img src="img/free-icon-carrot-1514935.png" alt="" />
+            <div class="carrot-icon">
+              <img src="img/carrot.png" alt="당근 아이콘" />
             </div>
             <!--버튼2 (레시피 검색)-->
             <button class="btn-open-popup">
-              <img class="buttonImg3" src="img/rc3.png" alt="" />
+              <img
+                class="recipebook-icon"
+                src="img/recipebook.png"
+                alt="레시피북 아이콘"
+              />
             </button>
           </div>
         </div>

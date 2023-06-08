@@ -4,4 +4,6 @@ function goToSearchPage() {
 }
 
 // 이벤트 핸들러 - 클릭 이벤트 발생 시 함수(화면 전환) 호출
-document.querySelector(".chef-icon").addEventListener("click", goToSearchPage);
+document
+  .querySelector(".chef-icon01")
+  .addEventListener("click", goToSearchPage);

@@ -1,19 +1,4 @@
-let data = [
-  {
-    role: "system",
-    content:
-      "assistant는 요리 전문가입니다. 사용자가 재료를 입력하면 그것들로 만들 수 있는 요리를 목록으로 3개 이상 5개 이하로 알려줍니다. 존댓말을 사용합니다.",
-  },
-  {
-    role: "user",
-    content: "감자",
-  },
-  {
-    role: "assistant",
-    content:
-      "감자로 만들 수 있는 다양한 요리가 있습니다. 몇 가지를 소개해드리겠습니다.\n1. 감자튀김: 감자를 슬라이스해서 노릇하게 튀겨서 소금이나 양념을 뿌려서 드시면 맛있습니다. 간단하지만 깊은 맛을 느낄 수 있는 대표적인 감자 요리입니다.\n2. 구운 감자: 감자를 껍질까지 깨끗이 씻고, 껍질은 깨끗한 상태로 유지합니다. 전자레인지나 오븐에서 굽습니다. 구운 감자는 부드럽고 달콤해서 좋습니다.\n3. 감자조림: 감자를 끓인 후 고춧가루, 간장, 설탕 등으로 간을 맞추면 매콤하고 달콤한 감자조림이 나옵니다.\n4. 감자전: 감자를 다진 후 부침가루와 계란 등으로 만든 반죽에 넣어서 굽습니다. 간단하게 만들어도 맛이 좋습니다.\n5. 감자구이: 감자를 토막내서 오븐이나 프라이팬에서 구워줍니다. 소금이나 고추장을 뿌려서 드시면 맛있습니다.\n알려드린 방법들 외에도 많은 방법으로 감자를 요리할 수 있습니다. 직접 조리해 보시면 더 맛있는 요리를 만들어 낼 수 있을 것입니다.",
-  },
-];
+import { data1 } from "./data.js";
 
 const form = document.getElementById("myForm");
 const textarea = document.getElementById("myTextarea");
@@ -39,13 +24,13 @@ form.addEventListener("submit", function (event) {
   // console.log(textarea.value);
 
   // 입력값을 로컬 스토리지에 저장
-  userInputData = textarea.value;
+  let userInputData = textarea.value;
   localStorage.setItem("inputValue", userInputData);
 
   // textarea란 초기화
-  textarea.value = "";
+  // userInputData = "";
 
-  data.push({
+  data1.push({
     role: "user",
     content: userInputData,
   });
@@ -60,7 +45,7 @@ function chatGptAPI() {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(data1),
     redirect: "follow",
   })
     .then((res) => res.json())

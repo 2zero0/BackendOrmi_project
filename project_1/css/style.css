@@ -1,3 +1,4 @@
+/*font*/
 @font-face {
   font-family: "NeoDunggeunmo";
   font-weight: normal;
@@ -13,7 +14,8 @@
       format("truetype");
   font-display: swap;
 }
-/*초기화 작업*/
+
+/*reset*/
 body,
 h1,
 p,
@@ -26,6 +28,7 @@ body {
   background-color: #7fffd454;
 }
 
+/*index.html*/
 .container {
   display: flex;
   flex-direction: column;
@@ -65,7 +68,7 @@ body {
   align-items: center;
 }
 
-.chef-icon {
+.chef-icon01 {
   position: absolute;
   width: 200px;
   height: 200px;
@@ -145,22 +148,17 @@ button {
   }
 }
 
-/*search.html -*/
-
 /*result.html*/
-.container2 {
-  margin: auto;
-  margin-top: 100px;
-  margin-bottom: 50px;
-  min-width: 100vh;
+.result-main {
+  display: flex;
 }
 
-.chefIcon2 {
+.chef-icon02 {
   width: 200px;
   height: 200px;
 }
 
-.cookingList {
+.cooking-list {
   width: 550px;
   height: 600px;
   background-color: #ecf0f1;
@@ -171,11 +169,11 @@ button {
   border-radius: 0 20px 20px 20px;
 }
 
-.chefAnswer {
+.answer-box {
   margin-left: 20px;
 }
 
-.guide3 {
+.guide03 {
   width: 550px;
   height: 70px;
   background-color: #4482c3;
@@ -189,39 +187,39 @@ button {
   text-align: center;
 }
 
-.highlight {
+.line-highlight01 {
   display: inline;
   box-shadow: inset 0 -10px 0 #ffe2b5;
   /*-10px은 highlight의 두께*/
 }
 
-.buttonImg2 {
+.carrot-icon {
   width: 100px;
   height: 100px;
 }
 
-.buttonImg2:hover {
+.carrot-icon:hover {
   width: 105px;
   height: 105px;
 }
 
-.buttonImg3 {
+.recipebook-icon {
   width: 100px;
   height: 100px;
 }
 
-.buttonImg3:hover {
+.recipebook-icon:hover {
   width: 105px;
   height: 105px;
 }
 
-.buttonBox {
+.button-box {
   margin-top: 40px;
   display: flex;
   margin-left: 80px;
 }
 
-/*result.html - 모달*/
+/*result.html - modal*/
 .modal {
   position: absolute;
   top: 0;
@@ -235,13 +233,12 @@ button {
   display: block;
 }
 
-.modal_body {
+.modal-body {
   position: absolute;
   top: 50%;
   left: 50%;
 
   width: 750px;
-  /* height: 500px; */
   max-height: 90vh;
 
   padding: 40px;
@@ -255,24 +252,24 @@ button {
   overflow: auto;
 }
 
-.modal_body::-webkit-scrollbar {
+.modal-body::-webkit-scrollbar {
   width: 15px;
 }
 
-.modal_body::-webkit-scrollbar-thumb {
+.modal-body::-webkit-scrollbar-thumb {
   background-color: #a5cdff;
   border-radius: 10px;
   background-clip: padding-box;
   border: 2px solid transparent;
   box-shadow: inset 0px 0px 5px white;
 }
-.modal_body::-webkit-scrollbar-track {
+.modal-body::-webkit-scrollbar-track {
   background-color: #7b7b7c;
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
 }
 
-.guide4 {
+.guide04 {
   font-family: "NeoDunggeunmo";
   font-size: large;
   border-radius: 10px;
@@ -283,33 +280,29 @@ button {
   color: white;
 }
 
-.closeButton {
+.close-button {
   border: none;
   background-color: white;
   float: right;
 }
 
-.inputBox {
-  display: flex;
-}
-
-.modal_main {
+.modal-main {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: 35px;
 }
 
-.searchButton {
+.search-button {
   background-color: white;
   border: none;
 }
 
-.inputBox {
+.input-box {
   margin: 20px 10px 20px 22px;
   display: flex;
 }
-.inputStyle {
+.input-style {
   width: 240px;
   border: 3px solid #7b7b7c;
   border-radius: 5px;
@@ -317,17 +310,16 @@ button {
   padding: 5px;
 }
 
-.imgBox {
+.img-box {
   width: 400px;
   height: 400px;
-  /* border: 3px solid #7b7b7c; */
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
   padding-left: 2px;
 }
 
-.recipeBox {
+.recipe-box {
   border-radius: 10px;
   margin: 30px 20px 0 20px;
   padding: 10px;
@@ -339,9 +331,25 @@ button {
   color: black;
 }
 
-.highlight2 {
+.line-highlight02 {
   display: inline;
   box-shadow: inset 0 -15px 0 white;
-  /*-10px은 highlight의 두께*/
+  /*-15px은 highlight의 두께*/
   color: #394049;
+}
+
+.cancel-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.hotpot-icon {
+  width: 400px;
+  height: 400px;
+}
+
+.search-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
 }
