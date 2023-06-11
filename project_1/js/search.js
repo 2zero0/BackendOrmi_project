@@ -1,6 +1,7 @@
 import { data1 } from "./data.js";
 import { LoadingWithMask, closeLoadingWithMask } from "./loading.js";
 import { chatGptAPI } from "./openApi.js";
+import { goHome } from "./index.js";
 
 const form = document.getElementById("myForm");
 const textarea = document.getElementById("myTextarea");
@@ -37,3 +38,7 @@ form.addEventListener("submit", function (event) {
   // chatGptAPI 함수 호출
   chatGptAPI();
 });
+
+// 이벤트 핸들러 - logo-img의 클릭 이벤트 발생 시
+// 페이지 이동 위해 index.js의 goHome함수 호출
+document.querySelector(".logo-img").addEventListener("click", goHome);

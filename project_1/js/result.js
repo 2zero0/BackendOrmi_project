@@ -1,4 +1,5 @@
 import { formatCookingList } from "./lineHighlight.js";
+import { goHome } from "./index.js";
 
 // 이벤트 핸들러 - 문서 완전히 로드 완료 시(DOMContentLoaded)
 // 1. 로컬스토리지에 저장된 결과 값 가져와 변수에 저장
@@ -26,3 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelector(".carrot-icon").addEventListener("click", (e) => {
   window.location = "search.html";
 });
+
+// 이벤트 핸들러 - logo-img의 클릭 이벤트 발생 시
+// 페이지 이동 위해 index.js의 goHome함수 호출
+document.querySelector(".logo-img").addEventListener("click", goHome);

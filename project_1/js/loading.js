@@ -4,6 +4,10 @@ export function LoadingWithMask() {
   for (let i = 0; i < containerDisable.length; i++) {
     containerDisable[i].style.display = "none";
   }
+  const footerDisable = document.getElementsByClassName("footer");
+  for (let i = 0; i < footerDisable.length; i++) {
+    footerDisable[i].style.display = "none";
+  }
 
   let mask = document.createElement("div");
   mask.id = "mask";
