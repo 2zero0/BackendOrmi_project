@@ -73,7 +73,4 @@
 - FE, 디자인: 이 영
 
 ## 5. UI / BM
-- ![index](https://github.com/2zero0/BackendOrmi_project1/assets/43246395/4c6b4b01-c545-49df-8a30-ee9f2a7860cc)
-
-- 아래 페이지별 상세 설명, 더 큰 이미지로 하나하나씩 설명 필요
-<img src="ui.png" width="40%">
+- <img src="https://github.com/2zero0/BackendOrmi_project1/assets/43246395/4c6b4b01-c545-49df-8a30-ee9f2a7860cc" alt="index" width="40%">
