@@ -19,14 +19,16 @@
 ### 2.1 개발 환경
 
 - Front-end
-  - HTML
-  - JavaScript
-  - CSS
+  - <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  - <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  - <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 - API
   - ChatGPT API
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="30px">
   - Kakao 이미지검색 API
+    <img src="https://i.namu.wiki/i/UlmfWXwfsiHSUDYFpJOFdGP97DQsxyHksw3nUO6Kp8aqGF3LKeklG-0jIDEDq563tdQsvMaG54P5W9CONGOoMmMIMxXZl-04xlQOLc9Ush1kM0GKhhQkFpkedARkMzGWNIs6eymlDqDd_clddWo38Q.svg" width="27px">
 - 서비스 배포 환경
-  - GitHub Page
+  - <img src="https://img.shields.io/badge/githubpage-181717?style=for-the-badge&logo=github&logoColor=white">
 
 ### 2.2 배포 URL
 
@@ -80,7 +82,7 @@
 
 ## 4. 역할 분담
 
-- FE, 디자인: 이 영
+- 모든 역할과 작업은 개인이 수행함
 
 ## 5. UI / BM
 
