@@ -98,7 +98,7 @@
   <img src="https://github.com/2zero0/BackendOrmi_project1/assets/43246395/13401b2e-2909-4c93-a41c-4a1a8e6d3f76" width="80%">
 - 사용자가 만들고자하는 요리 이름을 검색하면 요리 사진과 레시피 출력
   (Kakao 이미지 검색 API, ChatGPT API 이용)<br>
-  <img src="https://github.com/2zero0/BackendOrmi_project1/assets/43246395/d182c26d-03fb-4c7e-83bb-05df85e703c5" width="80%">
+  <img src="https://github.com/2zero0/BackendOrmi_project1/assets/43246395/bdad59f3-4f08-48ae-bdca-a11dd96b9f00" width="80%">
 
 ## 7. 개발하며 느낀점
 
