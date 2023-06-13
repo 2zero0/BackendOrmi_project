@@ -77,6 +77,11 @@ body {
   align-items: center;
 }
 
+.chef-icon01:hover {
+  width: 210px;
+  height: 210px;
+}
+
 /*search.html*/
 #myTextarea {
   width: 460px;
@@ -161,7 +166,7 @@ button {
 .loading-img {
   position: relative;
   display: block;
-  margin: 20px auto 20px;
+  margin: 50px auto 20px;
   width: 500px;
   height: 500px;
 }
@@ -285,11 +290,11 @@ button {
 }
 
 .modal-body::-webkit-scrollbar {
-  width: 15px;
+  width: 17px;
 }
 
 .modal-body::-webkit-scrollbar-thumb {
-  background-color: #a5cdff;
+  background-color: #efffc5;
   border-radius: 10px;
   background-clip: padding-box;
   border: 2px solid transparent;
@@ -314,6 +319,26 @@ button {
 
 .guide05 {
   text-align: center;
+}
+
+.spinner {
+  margin-top: 13px;
+  background-color: white;
+  min-width: 40px;
+  min-height: 40px;
+  border: 8px solid #7b7b7c;
+  border-right: 5px solid #efffc5;
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .close-button {

@@ -72,10 +72,16 @@ document.querySelector(".search-icon").addEventListener("click", () => {
     ".recipe-box"
   ).innerHTML = `<p class='guide05'>잠시만 기다리시면 이 곳에 <b>'${inputRecipeName}'</b> 레시피가 출력됩니다!</p>`;
 
+  // 로딩 스피너
+  const spinnerBox = document.createElement("div");
+  spinnerBox.classList.add("spinner");
+  document.querySelector(".modal-main").appendChild(spinnerBox);
+
   // openApi.js의 searchImages함수 호출
   // 반환 값 recipe-box에 출력
   searchRecipe(inputRecipeName)
     .then((formattedStr) => {
+      spinnerBox.style.display = "none";
       document.querySelector(".recipe-box").innerHTML = formattedStr;
     })
     .catch((error) => {
