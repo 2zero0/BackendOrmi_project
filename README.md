@@ -30,7 +30,7 @@
 
 ### 2.2 배포 URL
 
--https://2zero0.github.io/BackendOrmi_project1/project_1/
+- https://2zero0.github.io/BackendOrmi_project1/project_1/
 
 ## 3. 프로젝트 구조와 개발 일정
 

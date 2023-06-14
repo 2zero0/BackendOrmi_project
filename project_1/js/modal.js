@@ -1,16 +1,10 @@
 import { searchImages, searchRecipe } from "./openApi.js";
 
-// X 아이콘 클릭 시 모달 제거
-const xImg = document.querySelector(".close-button");
-xImg.addEventListener("click", () => {
-  modal.classList.remove("show");
-  body.style.overflow = "auto";
-});
-
 // 모달 컨트롤을 위한 변수
 const body = document.querySelector("body");
 const modal = document.querySelector(".modal");
 const btnOpenPopup = document.querySelector(".btn-open-popup");
+const xIcon = document.querySelector(".close-button");
 
 // 모달 출력
 btnOpenPopup.addEventListener("click", () => {
@@ -31,6 +25,12 @@ modal.addEventListener("click", (event) => {
       body.style.overflow = "auto";
     }
   }
+});
+
+// X 아이콘 클릭 시 모달 제거
+xIcon.addEventListener("click", () => {
+  modal.classList.remove("show");
+  body.style.overflow = "auto";
 });
 
 // 모달 - 이미지 출력
