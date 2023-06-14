@@ -10,6 +10,7 @@ export function formatCookingList(resultValue) {
       if (dotIndex !== -1) {
         const number = trimmedLine.substring(0, dotIndex).trim();
         const dish = trimmedLine.substring(dotIndex + 1).trim();
+
         const formattedLine = `<b class="line-highlight01">${number}:</b> ${dish}`;
         formattedString += `${formattedLine}<br>`;
       } else {
@@ -17,7 +18,6 @@ export function formatCookingList(resultValue) {
       }
     }
   });
-
   return formattedString;
 }
 
@@ -33,17 +33,16 @@ export function formatRecipeText(resultRecipe) {
       if (dotIdx !== -1) {
         const title = trim_line.substring(0, dotIdx).trim();
         const description = trim_line.substring(dotIdx + 1).trim();
+
         const format_line = `<br><b class="line-highlight02">${title}:</b> ${description}`;
         formattedStr += `${format_line}<br>`;
       } else {
         formattedStr += `${trim_line}<br>`;
       }
     }
-
     if (index === line_group.length - 1) {
       formattedStr += "<br>";
     }
   });
-
   return formattedStr;
 }

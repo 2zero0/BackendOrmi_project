@@ -20,9 +20,6 @@ form.addEventListener("submit", function (event) {
     closeLoadingWithMask(); // 1분 후에 로딩중 제거 함수 호출
   }, 60000);
 
-  // 출력 확인용
-  // console.log(textarea.value);
-
   // 입력값을 로컬 스토리지에 저장
   let userInputData = textarea.value;
   localStorage.setItem("inputValue", userInputData);

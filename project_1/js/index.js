@@ -2,7 +2,7 @@
 const chefIcon = document.querySelector(".chef-icon01");
 if (chefIcon) {
   chefIcon.addEventListener("click", function () {
-    window.location = "search.html";
+    location.href = "search.html";
   });
 }
 
@@ -12,5 +12,5 @@ logoImg.addEventListener("click", goHome);
 
 // 로고 클릭 시 페이지 이동 함수
 export function goHome() {
-  window.location = "index.html";
+  location.href = "index.html";
 }

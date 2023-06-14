@@ -16,15 +16,11 @@ export function chatGptAPI() {
   })
     .then((res) => res.json())
     .then((res) => {
-      // 출력 확인용
-      //console.log("res: ", res);
-      //console.log("출력값: ", res.choices[0].message.content);
-
       // 결과 값을 로컬 스토리지에 저장
       localStorage.setItem("resultValue", res.choices[0].message.content);
 
       // 페이지 이동
-      window.location = "result.html";
+      location.href = "result.html";
     });
 }
 

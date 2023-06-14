@@ -197,13 +197,14 @@ button {
 
 .cooking-list {
   width: 550px;
-  height: 600px;
+  min-height: 600px;
   background-color: #ecf0f1;
   font-family: "NeoDunggeunmo";
   font-size: medium;
   padding: 20px;
   border: 5px solid #3c3e4f;
   border-radius: 0 20px 20px 20px;
+  box-shadow: 5px 5px 5px #3c3e4f99;
 }
 
 .answer-box {
@@ -215,13 +216,14 @@ button {
   height: 70px;
   background-color: #4482c3;
   color: white;
-  margin-top: 20px;
+  margin-top: 30px;
   font-family: "NeoDunggeunmo";
   font-size: medium;
   padding: 20px;
   border: 5px solid #3c3e4f;
   border-radius: 0 20px 20px 20px;
   text-align: center;
+  box-shadow: 5px 5px 5px #3c3e4f99;
 }
 
 .line-highlight01 {
