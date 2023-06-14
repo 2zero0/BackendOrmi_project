@@ -1,6 +1,7 @@
 import { data1 } from "./data.js";
 import { data2 } from "./data.js";
 import { formatRecipeText } from "./lineHighlight.js";
+import { config } from "./apikey.js";
 
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
@@ -30,7 +31,7 @@ export function searchImages(query) {
   return fetch(`https://dapi.kakao.com/v2/search/image?query=${query}`, {
     method: "GET",
     headers: {
-      Authorization: "KakaoAK 9cafd6a49ad0561ac99a151b58f2d4b4",
+      Authorization: config.kakaoApiKey,
     },
   })
     .then((response) => response.json())

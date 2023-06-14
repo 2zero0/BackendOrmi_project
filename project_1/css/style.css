@@ -398,7 +398,7 @@ button {
   display: inline;
   box-shadow: inset 0 -15px 0 white;
   /*-15px은 highlight의 두께*/
-  color: #394049;
+  color: #2a3039;
 }
 
 .cancel-icon {
