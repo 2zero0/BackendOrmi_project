@@ -1,5 +1,6 @@
 // 이벤트 핸들러 - chef-icon의 클릭 이벤트 발생 시 함수(search.html로 페이지 전환) 호출
 const chefIcon = document.querySelector(".chef-icon01");
+
 if (chefIcon) {
   chefIcon.addEventListener("click", function () {
     location.href = "search.html";
