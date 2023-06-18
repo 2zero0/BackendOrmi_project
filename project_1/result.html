@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fridge Rescuer</title>
+
+    <!-- js -->
     <script defer src="js/result.js" type="module"></script>
     <script defer src="js/modal.js" type="module"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- header -->
     <header class="header">
       <img
         class="logo-img"
@@ -19,8 +23,38 @@
         alt="fridge rescuer 로고 이미지"
       />
     </header>
+    <!-- //header -->
 
+    <!-- main -->
     <div class="container">
+      <div class="result-main">
+        <div>
+          <img class="chef-icon02" src="img/chef.png" alt="쉐프 아이콘" />
+        </div>
+        <div class="answer-box">
+          <div class="cooking-list">
+            <div id="resultAnswer"></div>
+          </div>
+          <div class="guide03">
+            <p>돌아가시려면 당근을, 레시피를 보시려면 레시피북을 눌러주세요!</p>
+          </div>
+          <div class="button-box">
+            <!--버튼1 (돌아가기)-->
+            <div class="carrot-icon">
+              <img src="img/carrot.png" alt="당근 아이콘" />
+            </div>
+            <!--버튼2 (레시피 검색)-->
+            <button class="btn-open-popup">
+              <img
+                class="recipebook-icon"
+                src="img/recipebook.png"
+                alt="레시피북 아이콘"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- modal -->
       <div class="modal">
         <div class="modal-body">
@@ -62,38 +96,10 @@
         </div>
       </div>
       <!-- //modal -->
-
-      <!-- main -->
-      <div class="result-main">
-        <div>
-          <img class="chef-icon02" src="img/chef.png" alt="쉐프 아이콘" />
-        </div>
-        <div class="answer-box">
-          <div class="cooking-list">
-            <div id="resultAnswer"></div>
-          </div>
-          <div class="guide03">
-            <p>돌아가시려면 당근을, 레시피를 보시려면 레시피북을 눌러주세요!</p>
-          </div>
-          <div class="button-box">
-            <!--버튼1 (돌아가기)-->
-            <div class="carrot-icon">
-              <img src="img/carrot.png" alt="당근 아이콘" />
-            </div>
-            <!--버튼2 (레시피 검색)-->
-            <button class="btn-open-popup">
-              <img
-                class="recipebook-icon"
-                src="img/recipebook.png"
-                alt="레시피북 아이콘"
-              />
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- //main -->
     </div>
+    <!-- //main -->
 
+    <!-- footer -->
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section">
@@ -104,5 +110,6 @@
         <p>&copy; 2023 Ormi - Young. All rights reserved.</p>
       </div>
     </footer>
+    <!-- //footer -->
   </body>
 </html>

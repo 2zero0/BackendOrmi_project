@@ -22,6 +22,9 @@ export function chatGptAPI() {
 
       // 페이지 이동
       location.href = "result.html";
+    })
+    .catch((error) => {
+      console.error(error);
     });
 }
 
@@ -43,6 +46,9 @@ export function searchImages(query) {
         height: "130px",
       }));
       return images;
+    })
+    .catch((error) => {
+      console.error(error);
     });
 }
 
@@ -69,5 +75,8 @@ export function searchRecipe(inputRecipeName) {
       const formattedRecipeText = formatRecipeText(resultRecipe);
 
       return formattedRecipeText;
+    })
+    .catch((error) => {
+      console.error(error);
     });
 }

@@ -35,7 +35,7 @@ body {
   align-items: center;
   margin: auto;
   margin-top: 70px;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   justify-content: center;
   min-width: 100vh;
 }
@@ -62,10 +62,14 @@ body {
   font-size: large;
 }
 
-.refridge-icon {
+.refridge-box {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.refridge-icon {
+  height: 600px;
 }
 
 .chef-icon01 {
@@ -75,6 +79,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 9px;
 }
 
 .chef-icon01:hover {
@@ -422,6 +427,8 @@ button {
 /*footer*/
 .footer {
   text-align: center;
+  font-family: "NeoDunggeunmo";
+  color: #3c3e4f;
 }
 
 /*header*/
