@@ -64,27 +64,31 @@ document.querySelector(".search-icon").addEventListener("click", () => {
 
 // 모달 - 레시피 출력
 // 돋보기 아이콘 클릭 시 호출
-document.querySelector(".search-icon").addEventListener("click", () => {
+function handleSearchClick() {
+  const searchIcon = document.querySelector(".search-icon");
   const inputRecipeName = document.getElementById("searchInput").value;
+  const recipeBox = document.querySelector(".recipe-box");
+  const modalMain = document.querySelector(".modal-main");
 
   // 안내 문구 (입력 값 포함)
-  document.querySelector(
-    ".recipe-box"
-  ).innerHTML = `<p class='guide05'>잠시만 기다리시면 이 곳에 <b>'${inputRecipeName}'</b> 레시피가 출력됩니다!</p>`;
+  recipeBox.innerHTML = `<p class='guide05'>잠시만 기다리시면 이 곳에 <b>'${inputRecipeName}'</b> 레시피가 출력됩니다!</p>`;
 
   // 로딩 스피너
   const spinnerBox = document.createElement("div");
   spinnerBox.classList.add("spinner");
-  document.querySelector(".modal-main").appendChild(spinnerBox);
+  modalMain.appendChild(spinnerBox);
 
-  // openApi.js의 searchImages함수 호출
+  // openApi.js의 searchRecipe함수 호출
   // 반환 값 recipe-box에 출력
   searchRecipe(inputRecipeName)
     .then((formattedStr) => {
       spinnerBox.style.display = "none";
-      document.querySelector(".recipe-box").innerHTML = formattedStr;
+      recipeBox.innerHTML = formattedStr;
     })
     .catch((error) => {
       console.error(error);
     });
-});
+}
+
+// search-icon 클릭 시 함수 호출
+document.querySelector(".search-icon").addEventListener("click", handleSearchClick);
