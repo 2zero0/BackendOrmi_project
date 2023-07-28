@@ -3,6 +3,8 @@ import { LoadingWithMask, closeLoadingWithMask } from "./loading.js";
 import { chatGptAPI } from "./openApi.js";
 import { goHome } from "./index.js";
 
+import { chatGptAPI_DRF } from "./openApi_DRF.js";
+
 const form = document.getElementById("myForm");
 const textarea = document.getElementById("myTextarea");
 
@@ -14,11 +16,11 @@ const textarea = document.getElementById("myTextarea");
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // 기본 제출 동작 방지
 
-  LoadingWithMask(); // 로딩중 표시 함수 호출
+  // LoadingWithMask(); // 로딩중 표시 함수 호출
 
-  setTimeout(function () {
-    closeLoadingWithMask(); // 1분 후에 로딩중 제거 함수 호출
-  }, 60000);
+  // setTimeout(function () {
+  //   closeLoadingWithMask(); // 1분 후에 로딩중 제거 함수 호출
+  // }, 60000);
 
   // 입력값을 로컬 스토리지에 저장
   let userInputData = textarea.value;
@@ -33,7 +35,10 @@ form.addEventListener("submit", function (event) {
   });
 
   // chatGptAPI 함수 호출
-  chatGptAPI();
+  // chatGptAPI();
+
+  // DRF와 통신하는 chatGPTAPI 호출
+  chatGptAPI_DRF();
 });
 
 // 이벤트 핸들러 - logo-img의 클릭 이벤트 발생 시
