@@ -25,7 +25,8 @@ textarea {
 }
 
 body {
-  background-color: #7fffd454;
+  /* background-color: #7fffd454; */
+  background: linear-gradient(45deg, rgb(114 162 253 / 44%) 10%, #7fffd46b 100%);
 }
 
 /*index.html*/

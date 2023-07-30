@@ -1,6 +1,7 @@
 // 요리 목록 하이라이팅 효과 함수
 export function formatCookingList(resultValue) {
   const lines = resultValue.split("\n");
+  
   let formattedString = "";
 
   lines.forEach((line) => {
@@ -18,6 +19,7 @@ export function formatCookingList(resultValue) {
       }
     }
   });
+  console.log(formattedString)
   return formattedString;
 }
 

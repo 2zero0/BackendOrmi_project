@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // 출력값
   const resultValue = localStorage.getItem("resultValue");
 
+  console.log(resultValue);
+
   // 요리 목록 -> 하이라이팅 효과 함수 호출
   const formattedRecipeList = formatCookingList(resultValue);
 
