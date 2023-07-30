@@ -1,10 +1,10 @@
-<!DOCTYPE html><htl lang="en">
-<hed>
-  <eta charset="UTF-8">
-  <eta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register / Login</title>
-  <ink href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rl="stylesheet">
-  <ink href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
   /*font*/
   @font-face {
@@ -313,7 +313,7 @@
         <h1>Register Account</h1>
       </div>
       <div class="form-content">
-        <form>
+        <form method="post">
           <div class="form-group">
             <label for="username">ID</label>
             <input type="text" id="register_username" name="username" required />
@@ -331,7 +331,7 @@
             <input type="password" id="cpassword" name="cpassword" required />
           </div>
           <div class="form-group">
-            <button type="submit">Register</button>
+            <button type="submit" class="register-btn">Register</button>
           </div>
         </form>
       </div>
@@ -366,7 +366,43 @@
         document.querySelector('.form').style.height = panelOne + 'px';
       });
     }
+
+    // DRF 서버와 api 통신
+    // register
+    document.querySelector(".register-btn").addEventListener("click", function(event) {
+      event.preventDefault();
+
+      var username = document.querySelector("#register_username").value;
+      var password = document.querySelector("#register_password").value;
+      var nickname = document.querySelector("#nickname").value;
+      var cpassword = document.querySelector("#cpassword").value;
+
+      if (password !== cpassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      fetch("http://127.0.0.1:8000/user/register/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username: username, password: password, nickname: nickname })
+      })
+      .then(response => {
+        if (response.status === 201) {
+          alert("Registration successful!");
+        } else {
+          alert("Registration failed: " + response.status + " " + response.statusText);
+        }
+        return response.json();
+      })
+      .catch(error => {
+        alert("Registration failed: " + error.message);
+      });
+    });
   });
+
 </script>
 </body>
 </html>
