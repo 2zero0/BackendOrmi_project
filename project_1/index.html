@@ -12,17 +12,79 @@
 
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      .exit-img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .log-file-img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .service-btn-box {
+        display: flex;
+        justify-content: flex-end;
+        gap: 50px;
+      }
+      .user-chef-icon {
+        width: 80px;
+        height: 80px;
+      }
+
+      .user-info {
+        display: flex;
+        border: 3px solid black;
+        background-color: #43becc;
+        border-radius: 50px;
+        padding: 5px;
+        color: white;
+        font-weight: bold;
+        align-items: center;
+      }
+
+      .service-box {
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
   </head>
   <body>
     <!-- header -->
     <header class="header">
-      <img
-        class="logo-img"
-        src="img/logo.png"
-        alt="fridge rescuer 로고 이미지"
-      />
+      <div class="service-box">
+        <div class="user-info" id="loggedInUser">
+          <img class="user-chef-icon" src="img/chef_user.png" alt="">
+          <span id="userDisplay"></span>
+        </div>
+      
+        <div class="service-btn-box">
+          <div>
+            <button type="button">
+              <img class="exit-img" src="img/exit.png" alt="exit 이미지">
+            </button>
+          </div>
+          <div>
+            <button type="button">
+              <img class="log-file-img" src="img/log-file.png" alt="log 파일 이미지">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <img
+          class="logo-img"
+          src="img/logo.png"
+          alt="fridge rescuer 로고 이미지"
+        />
+      </div>
     </header>
     <!-- //header -->
+
+    
 
     <!-- main -->
     <div class="container">
@@ -53,5 +115,49 @@
       </div>
     </footer>
     <!-- //footer -->
+
+    <script>
+      const authToken = localStorage.getItem("authToken");
+      document.addEventListener("DOMContentLoaded", function () {
+        displayLoggedInUser();
+        // 로그아웃
+        document.querySelector(".exit-img").addEventListener("click", function() {
+        // 토큰 제거
+        localStorage.removeItem("authToken");
+
+        // 로그인 화면으로 이동
+        location.href = "user_register.html";
+      });
+      });
+
+      function displayLoggedInUser() {
+      if (!authToken) {
+        alert("사용자 정보가 없습니다. 로그인을 먼저 하세요.");
+        return;
+      }
+
+      fetch("http://127.0.0.1:8000/user/userinfo/", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${authToken}`,
+        },
+      })
+        .then((response) => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            throw new Error("사용자 정보를 가져올 수 없습니다.");
+          }
+        })
+        .then((data) => {
+          const userDisplayText = `${data.nickname}(${data.username})`;
+          document.querySelector('#userDisplay').textContent = userDisplayText;
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    }
+    </script>
   </body>
 </html>

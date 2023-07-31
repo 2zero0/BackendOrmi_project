@@ -436,12 +436,15 @@ button {
 /*header*/
 .header {
   padding-top: 20px;
+  /* display: flex; */
+  justify-content: center;
 }
 
 .logo-img {
   width: 250px;
   height: auto;
   margin: 0 auto;
+  display: flex;
 }
 
 .logo-img:hover {

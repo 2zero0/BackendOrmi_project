@@ -1,8 +1,13 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register / Login</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fridge Rescuer</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" />
+
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
@@ -126,7 +131,7 @@
     box-sizing: border-box;
     padding: 12px 20px;
     color: rgba(0, 0, 0, 0.6);
-    font-family: inherit;
+    font-family: "sans-serif";
     font-size: inherit;
     font-weight: 500;
     line-height: inherit;
@@ -147,14 +152,17 @@
     width: 100%;
     border: 0;
     border-radius: 4px;
-    padding: 12px 20px;
+    padding: 15px 20px;
     color: #FFFFFF;
     font-family: inherit;
-    font-size: inherit;
+    font-size: larger;
     font-weight: 500;
     line-height: inherit;
     text-transform: uppercase;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px !important;
   }
   .two .form-group button {
     background: #FFFFFF;
@@ -275,6 +283,17 @@
 </style>
 </head>
 <body>
+  <!-- header -->
+  <header class="header">
+    <img
+      class="logo-img"
+      src="img/logo.png"
+      alt="fridge rescuer 로고 이미지"
+    />
+  </header>
+  <!-- //header -->
+
+
   <!-- Form -->
   <div class="form">
     <div class="form-toggle"></div>
@@ -391,7 +410,7 @@
       })
       .then(response => {
         if (response.status === 201) {
-          alert("Registration successful!");
+          alert("회원가입 성공! 이제 로그인 하세요");
         } else {
           alert("Registration failed: " + response.status + " " + response.statusText);
         }
@@ -425,9 +444,11 @@
         return response.json();
       })
       .then(data => {
-        if (data.token) {
+        console.log('Received data:', data); // 추가
+        if (data.access) {
           // JWT 토큰을 local storage에 저장
-          localStorage.setItem("authToken", data.token);
+          localStorage.setItem("authToken", data.access);
+          location.href = "index.html";
         }
       })
       .catch(error => {
