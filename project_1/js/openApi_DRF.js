@@ -1,6 +1,7 @@
 import { data1 } from "./data.js";
 
 const url = `http://127.0.0.1:8000/mychatbot/`;
+const authToken = localStorage.getItem('authToken');
 
 // function getCookie(name) {
 //   let cookieValue = null;
@@ -25,6 +26,7 @@ export function chatGptAPI_DRF() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "Authorization": `Bearer ${authToken}` // 인증 정보 헤더 포함
       // 'X-CSRFToken': csrftoken
     },
     // credentials: "include",
