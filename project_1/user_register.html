@@ -444,7 +444,7 @@
         return response.json();
       })
       .then(data => {
-        console.log('Received data:', data); // 추가
+        // console.log('Received data:', data);
         if (data.access) {
           // JWT 토큰을 local storage에 저장
           localStorage.setItem("authToken", data.access);

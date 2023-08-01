@@ -29,6 +29,7 @@
     td {
       padding: 20px;
       border-right: 1px solid black;
+      text-align: center;
     }
     td:last-child {
       border-right: none;
@@ -71,6 +72,11 @@
       padding: 3px 10px;
       border-radius: 3px;
     }
+    a {
+      text-decoration: 3px underline !important;
+      text-decoration-color: #58aa8a !important;
+      text-underline-offset: 5px;
+    }
   </style>
 </head>
 <body>
@@ -98,8 +104,8 @@
       <table class="chatlog-table">
         <thead>
             <tr>
-              <th><span class="highlight">질문</span></th>
-              <th><span class="highlight">시간</span></th>
+              <th><span class="highlight">질문 재료</span></th>
+              <th><span class="highlight">채팅 시간</span></th>
             </tr>
         </thead>
         <tbody id="chatlog-container">
@@ -138,7 +144,8 @@
       const logRow = document.createElement("tr");
 
       const logQuestion = document.createElement("td");
-      logQuestion.innerHTML = log.prompt;
+      // logQuestion.innerHTML = log.prompt;
+      logQuestion.innerHTML = `<a href="user_chatlog_detail.html?logId=${log.id}">${log.prompt}</a>`;
       logRow.appendChild(logQuestion);
 
       const logTimestamp = document.createElement("td");

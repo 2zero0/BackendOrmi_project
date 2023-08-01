@@ -195,6 +195,7 @@ button {
 /*result.html*/
 .result-main {
   display: flex;
+  margin-right: 200px;
 }
 
 .chef-icon02 {
@@ -203,7 +204,7 @@ button {
 }
 
 .cooking-list {
-  width: 550px;
+  width: 600px;
   min-height: 600px;
   background-color: #ecf0f1;
   font-family: "NeoDunggeunmo";
