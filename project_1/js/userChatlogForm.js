@@ -7,7 +7,7 @@ if (document.getElementById("chatlog-container")) {
   loadChatLogList();
 }
 
-// 채팅 내역 상세 보기 계산하기
+// 채팅 내역 상세 보기 함수 호출
 if (document.getElementById("chat-detail")) {
   loadChatLogDetail();
 }
@@ -15,15 +15,30 @@ if (document.getElementById("chat-detail")) {
 // 채팅 내역 목록 조회 함수
 function loadChatLogList() {
   const chatlogContainer = document.getElementById("chatlog-container");
+
+  // 마지막으로 처리한 로그의 날짜 추적
+  let lastDate = "";
+
   chatLogs.forEach(log => {
-    // const logDetail = document.createElement("p");
-    // logDetail.innerHTML = `질문: ${log.prompt}, 시간: ${log.timestamp}`;
-    // chatlogContainer.appendChild(logDetail);
+    const logDate = formatDateWithoutTime(log.timestamp);
+
+    // 새로운 로그의 날짜가 변경되었는지 확인 후 구분자 추가
+    if (logDate !== lastDate) {
+      const dateSeparator = document.createElement("tr");
+      const dateHeader = document.createElement("td");
+      dateHeader.classList.add("date-divider");
+      dateHeader.colSpan = 2;
+      dateHeader.innerHTML = `<span>${logDate}</span>`;
+      dateSeparator.appendChild(dateHeader);
+      chatlogContainer.appendChild(dateSeparator);
+
+      lastDate = logDate;
+    }
 
     const logRow = document.createElement("tr");
 
     const logQuestion = document.createElement("td");
-    // logQuestion.innerHTML = log.prompt;
+
     logQuestion.innerHTML = `<a href="user_chatlog_detail.html?logId=${log.id}">${log.prompt}</a>`;
     logRow.appendChild(logQuestion);
 
@@ -34,6 +49,15 @@ function loadChatLogList() {
 
     chatlogContainer.appendChild(logRow);
   });
+}
+
+// 데이터 저장된 마지막 날짜 계산 함수
+function formatDateWithoutTime(timestamp) {
+  const date = new Date(timestamp);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 

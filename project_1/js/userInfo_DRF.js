@@ -2,6 +2,7 @@
 export function displayLoggedInUser(authToken) {
   if (!authToken) {
     alert("사용자 정보가 없습니다. 로그인을 먼저 하세요.");
+    location.href="user_register.html"
     return;
   }
 

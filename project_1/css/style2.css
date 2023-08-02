@@ -295,17 +295,18 @@ body {
   background-color: white;
   font-family: "NeoDunggeunmo";
 }
+
 th {
-  padding: 10px;
-  border-right: 1px solid black;
+  padding: 12px;
+  border-right: 3px solid black;
 }
 th:last-child {
   border-right: none;
 }
 
 td {
-  padding: 15px 50px;
-  border-right: 1px solid black;
+  padding: 15px 80px;
+  border-right: 3px solid black;
   text-align: center;
 }
 td:last-child {
@@ -345,6 +346,7 @@ tbody>tr:last-child {
   font-family: "NeoDunggeunmo";
   font-size: large;
 }
+
 .highlight {
   background-color: #ffedb0;
   font-weight: bold;
@@ -352,10 +354,17 @@ tbody>tr:last-child {
   border-radius: 3px;
   color: black;
 }
+
 a {
   text-decoration: 3px underline !important;
   text-decoration-color: #58aa8a !important;
   text-underline-offset: 5px;
+}
+
+.date-divider {
+  background-color: #575757;
+  color: white;
+  font-size: large;
 }
 
 /* user_chatlog_detail.html */
