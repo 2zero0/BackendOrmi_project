@@ -33,7 +33,15 @@ export function chatGptAPI_DRF() {
     body: JSON.stringify({ prompt: data1 }),
     redirect: "follow",
   })
-    .then((res) => res.json())
+    .then((res) => {
+      if (res.status === 429) {
+        alert("하루 챗봇 사용 한도(5번)를 초과했습니다.");
+        location.href = "search.html";
+        return;
+      } else {
+        return res.json();
+      }
+    })
     .then((res) => {
       // 결과 값을 로컬 스토리지에 저장
       localStorage.setItem("resultValue", res.choices[0].message.content);
