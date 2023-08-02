@@ -11,16 +11,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- css -->
+    <link rel="stylesheet" href="css/style2.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- header -->
     <header class="header">
-      <img
-        class="logo-img"
-        src="img/logo.png"
-        alt="fridge rescuer 로고 이미지"
-      />
+      <div class="service-box">
+        <div class="user-info" id="loggedInUser">
+          <img class="user-chef-icon" src="img/chef_user.png" alt="">
+          <span id="userDisplay"></span>
+        </div>
+      
+        <div class="service-btn-box">
+          <div>
+            <button type="button">
+              <img class="exit-img" src="img/exit.png" alt="exit 이미지">
+            </button>
+          </div>
+          <div>
+            <button type="button">
+              <img class="log-file-img" src="img/log-file.png" alt="log 파일 이미지">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <img
+          class="logo-img"
+          src="img/logo.png"
+          alt="fridge rescuer 로고 이미지"
+        />
+      </div>
     </header>
     <!-- //header -->
 

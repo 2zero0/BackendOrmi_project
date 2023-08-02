@@ -28,7 +28,7 @@
 }
 
 .ai-chat img {
-  width: 60px;
+  width: 67px;
 }
 .chat-content {
   width: fit-content;
@@ -39,6 +39,7 @@
   border-radius: 0 20px 20px 20px;
   margin-top: 30px;
   background-color: white;
+  color: black;
 }
 .user-chat {
   overflow: hidden;
@@ -52,6 +53,7 @@
   background-color: #58aa8a;
   color: white;
   max-width: 70%;
+  padding: 15px 20px;
 }
 
 .ai-chat + .ai-chat img {

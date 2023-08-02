@@ -14,87 +14,37 @@
 
   <!-- js -->
   <script defer src="js/index.js" type="module"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <script defer src="js/userChatlogForm.js" type="module"></script>
+  
   <!-- css -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style2.css" />
   <link rel="stylesheet" href="css/chat.css" />
-
-  <style>
-    .chatlog-table {
-      background-color: white;
-      font-family: "NeoDunggeunmo";
-    }
-    th {
-      padding: 10px;
-      border-right: 1px solid black;
-    }
-    th:last-child {
-      border-right: none;
-    }
-    
-    td {
-      padding: 20px;
-      border-right: 1px solid black;
-    }
-    td:last-child {
-      border-right: none;
-    }
-
-    tr {
-      border-bottom: 1px solid black;
-    }
-    tbody>tr:last-child {
-      border-bottom: none;
-    }
-
-    .table-content {
-      border: 4px solid black;
-      border-radius: 20px;
-      padding: 10px 30px;
-      background-color: white;
-      margin-top: 30px;
-    }
-
-    .guide06 {
-      background-color: #58aa8a;
-      color: white;
-      width: 500px;
-      text-align: center;
-      border-radius: 20px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      font-family: "NeoDunggeunmo";
-      font-size: large;
-    }
-    .highlight {
-      background-color: #ffedb0;
-      font-weight: bold;
-      padding: 3px 10px;
-      border-radius: 3px;
-    }
-    a {
-      text-decoration: 3px underline !important;
-      text-decoration-color: #58aa8a !important;
-      text-underline-offset: 5px;
-    }
-    .chatlog-chef-icon {
-      width: 70px;
-      height: 70px;
-    }
-    .chat-screen {
-      font-family: "NeoDunggeunmo";
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <!-- header -->
   <header class="header">
+    <div class="service-box">
+      <div class="user-info" id="loggedInUser">
+        <img class="user-chef-icon" src="img/chef_user.png" alt="">
+        <span id="userDisplay"></span>
+      </div>
+    
+      <div class="service-btn-box">
+        <div>
+          <button type="button">
+            <img class="exit-img" src="img/exit.png" alt="exit 이미지">
+          </button>
+        </div>
+        <div>
+          <button type="button">
+            <img class="log-file-img" src="img/log-file.png" alt="log 파일 이미지">
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div>
       <img
         class="logo-img"
@@ -107,26 +57,31 @@
 
   <!-- main -->
   <div class="container">
+    <div class="back-btn-box">
+      <button>
+        <img class="back-icon" src="img/goback.png" alt="">
+      </button>
+    </div>
+
     <div class="chat-wrap">
       <p class="chat-info"></p>
       <div class="chat-screen">
+        <div id="chat-detail">
+          <div class="ai-chat">
+            <img src="img/chef_user.png" alt="사용자 아이콘" />
+            <div class="chat-content">
+              <p id="prompt-text"></p>
+            </div>
+          </div>
 
-        <div class="ai-chat">
-          <img src="img/chef_user.png" alt="licat" />
-          <div class="chat-content">
-            <p id="prompt-text"></p>
+          <div class="user-chat">
+            <div class="chat-content">
+              <p id="response-text"></p>
+            </div>
+            <img class="chatlog-chef-icon" src="img/chef.png" alt="쉐프 아이콘" />
           </div>
         </div>
-
-        <div class="user-chat">
-          <div class="chat-content">
-            <p id="response-text"></p>
-          </div>
-          <img class="chatlog-chef-icon" src="img/chef.png" alt="licat" />
-        </div>
-
       </div>
-    
     </div>
   </div>
   <!-- //main -->
@@ -143,35 +98,5 @@
     </div>
   </footer>
   <!-- //footer -->
-
-  <script>
-    const logId = parseInt(new URLSearchParams(window.location.search).get("logId"));
-    
-    const chatLogs = JSON.parse(localStorage.getItem("chatLogs"));
-    const chatData = chatLogs.find(log => log.id === logId);
-
-    if (chatData) {
-      document.getElementById("prompt-text").innerHTML = chatData.prompt;
-
-      document.getElementById("response-text").innerHTML = chatData.response.replace(/\n/g, '<br>');
-
-      const formattedTimestamp = formatDate(chatData.timestamp);
-      document.querySelector('.chat-info').innerHTML = `${formattedTimestamp} 시각의 채팅 기록입니다`;
-      
-    } else {
-      document.getElementById("chat-detail").innerHTML = "데이터가 없습니다.";
-    }
-
-    function formatDate(timestamp) {
-      const date = new Date(timestamp);
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, "0");
-      const day = String(date.getDate()).padStart(2, "0");
-      const hours = String(date.getHours()).padStart(2, "0");
-      const minutes = String(date.getMinutes()).padStart(2, "0");
-
-      return `${year}-${month}-${day} ${hours}:${minutes}`;
-    }
-  </script>
 </body>
 </html>

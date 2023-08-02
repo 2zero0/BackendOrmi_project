@@ -12,44 +12,7 @@
 
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
-
-    <style>
-      .exit-img {
-        width: 60px;
-        height: 60px;
-      }
-
-      .log-file-img {
-        width: 60px;
-        height: 60px;
-      }
-
-      .service-btn-box {
-        display: flex;
-        justify-content: flex-end;
-        gap: 50px;
-      }
-      .user-chef-icon {
-        width: 60px;
-        height: 60px;
-      }
-
-      .user-info {
-        display: flex;
-        border: 3px solid black;
-        background-color: #4f6e84;
-        border-radius: 50px;
-        padding: 5px;
-        color: white;
-        font-weight: bold;
-        align-items: center;
-      }
-
-      .service-box {
-        display: flex;
-        justify-content: space-around;
-      }
-    </style>
+    <link rel="stylesheet" href="css/style2.css" />
   </head>
   <body>
     <!-- header -->
@@ -84,8 +47,6 @@
     </header>
     <!-- //header -->
 
-    
-
     <!-- main -->
     <div class="container">
       <div class="guide01">
@@ -115,84 +76,5 @@
       </div>
     </footer>
     <!-- //footer -->
-
-    <script>
-      const authToken = localStorage.getItem("authToken");
-      document.addEventListener("DOMContentLoaded", function () {
-        // 로그인된 유저 정보 출력
-        displayLoggedInUser();
-
-        // log 아이콘 클릭 시
-        document.querySelector(".log-file-img").addEventListener("click", function() {
-        // 채팅 내용 조회
-        userChatLogs()
-        });
-
-        // exit 아이콘 클릭 시
-        document.querySelector(".exit-img").addEventListener("click", function() {
-        // 토큰 제거
-        // 로그아웃
-        localStorage.removeItem("authToken");
-
-        // 로그인 화면으로 이동
-        location.href = "user_register.html";
-      });
-
-      });
-
-      // 유저 정보 출력
-      function displayLoggedInUser() {
-      if (!authToken) {
-        alert("사용자 정보가 없습니다. 로그인을 먼저 하세요.");
-        return;
-      }
-
-      fetch("http://127.0.0.1:8000/user/userinfo/", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${authToken}`,
-        },
-      })
-        .then((response) => {
-          if (response.status === 200) {
-            return response.json();
-          } else {
-            throw new Error("사용자 정보를 가져올 수 없습니다.");
-          }
-        })
-        .then((data) => {
-          const userDisplayText = `${data.nickname}(${data.username})`;
-          document.querySelector('#userDisplay').textContent = userDisplayText;
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-    }
-
-    // 채팅 내역 조회
-    function userChatLogs() {
-    const authToken = localStorage.getItem('authToken');
-
-    fetch("http://127.0.0.1:8000/chatlog/", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${authToken}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // 채팅 내역을 로컬 스토리지에 저장
-        localStorage.setItem("chatLogs", JSON.stringify(data));
-
-        // chatlog.html 페이지로 이동
-        location.href = "user_chatlog_list.html";
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    }
-    </script>
   </body>
 </html>
